@@ -19,8 +19,8 @@ st.set_page_config(page_title="Fraud Predictor", layout="wide")
 st.title("🔍 Online Fraud Prediction")
 
 # --- SECTION 1: Upload CSV as reference ---
-st.header("1. Upload Online Fraud CSV (Reference Only)")
-raw_file = st.file_uploader("Upload online_fraud.csv", type=['csv'])
+st.header("1. Upload Online Fraud CSV")
+raw_file = st.file_uploader("onlinefraud.csv", type=['csv'])
 if raw_file:
     df_ref = pd.read_csv(raw_file)
     st.dataframe(df_ref.head())
