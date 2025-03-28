@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+lightgbm
+joblib
+openpyxl
+stable-baselines3
+gymnasium
+keras
+tensorflow
