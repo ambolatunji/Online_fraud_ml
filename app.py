@@ -4,6 +4,7 @@ import numpy as np
 import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.ensemble import VotingClassifier
@@ -18,11 +19,24 @@ from stable_baselines3 import DQN
 st.set_page_config(page_title="Fraud Predictor", layout="wide")
 st.title("🔍 Online Fraud Prediction")
 
-# --- SECTION 1: Upload CSV as reference ---
+# --- SECTION 1: Uploading CSV---
 st.header("1. Upload Online Fraud CSV")
-raw_file = st.file_uploader("onlinefraud.csv", type=['csv'])
-if raw_file:
+
+# Option A: Let user upload manually
+raw_file = st.file_uploader("Upload onlinefraud.csv", type=['csv'])
+
+# Option B: Load from fixed path if not uploaded
+if raw_file is not None:
     df_ref = pd.read_csv(raw_file)
+else:
+    try:
+        df_ref = pd.read_csv("onlinefraud.csv")
+        st.info("Loaded data from default path: onlinefraud.csv")
+    except FileNotFoundError:
+        df_ref = None
+        st.warning("Please upload onlinefraud.csv file or place it in the working directory.")
+
+if df_ref is not None:
     st.dataframe(df_ref.head())
 
 # --- SECTION 2: Manual Input Form ---

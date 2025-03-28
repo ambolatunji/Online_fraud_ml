@@ -11,4 +11,4 @@ openpyxl
 stable-baselines3
 gymnasium
 keras
-numpy
+numpy==1.23.5
