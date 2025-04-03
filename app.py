@@ -1,5 +1,4 @@
 import streamlit as st
-st.set_option("server.maxUploadSize", 800)
 import pandas as pd
 import numpy as np
 import joblib
