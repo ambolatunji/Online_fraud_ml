@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_option("server.maxUploadSize", 800)
 import pandas as pd
 import numpy as np
 import joblib
@@ -13,7 +14,7 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import GridSearchCV
 from tensorflow.keras.models import load_model, Sequential
 from tensorflow.keras.layers import Dense
-from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+from scikeras.wrappers import KerasClassifier
 from stable_baselines3 import DQN
 
 st.set_page_config(page_title="Fraud Predictor", layout="wide")

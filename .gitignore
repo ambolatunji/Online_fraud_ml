@@ -1,0 +1,13 @@
+
+fraudml/
+*.csv
+*.csv.gz
+*/fraudml/
+*.json
+*/logs/
+*.log
+
+
+
+# Ignore all files in the fraudml directory
+fraudml/*

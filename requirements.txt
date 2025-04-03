@@ -11,6 +11,7 @@ joblib
 openpyxl
 stable-baselines3
 gymnasium
+scikeras
 keras
 #numpy==1.23.5
 
