@@ -1,5 +1,6 @@
 streamlit
-tensorflow==2.11.0
+#tensorflow==2.11.0
+tensorflow
 pandas
 matplotlib
 seaborn
@@ -11,4 +12,5 @@ openpyxl
 stable-baselines3
 gymnasium
 keras
-numpy==1.23.5
+#numpy==1.23.5
+
